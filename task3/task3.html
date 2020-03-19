@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>web存储</title>
+    <style>
+        .main {
+            margin: 0 auto;
+            width: 600px;
+            height: 1200px;
+            margin-top: 200px;
+        }
+
+        .leg {
+            color: red;
+        }
+
+        .color {
+            border: 1px solid lightgrey;
+            height: 40px;
+        }
+
+        .colorList {
+            margin-left: -30px;
+            margin-top: 10px;
+        }
+
+        .colorList li {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .text {
+            width: 550px;
+            height: 50px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <form class="changeStyle">
+            <fieldset class="field">
+                <legend class="leg" style="font-size: xx-large;font-weight: bolder;">网页换肤</legend>
+                <div class="color">
+                    <ul class="colorList">
+                        <li class="l1" id="l1" style="background-color: #AAAAAA;" title="灰色"></li>
+                        <li class="l2" id="l2" style="background-color: #8A2BE2;" title="紫色"></li>
+                        <li class="l3" id="l3" style="background-color: #FFB6C1;" title="红色"></li>
+                        <li class="l4" id="l4" style="background-color: #00BFFF;" title="蓝色"></li>
+                        <li class="l5" id="l5" style="background-color: #FFFF00;" title="橙色"></li>
+                        <li class="l6" id="l6" style="background-color: #00FA9A;" title="绿色"></li>
+                    </ul>
+                </div>
+                <div class="text" id="text">
+                    <p>LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。</p>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+<script>
+
+
+    l1.onclick = function () {
+        if (localStorage) {
+            l1.style.top = -5 + "px";
+            if (l2.style.top == "-5px") {
+                l2.style.top = 0;
+            }
+            else if (l3.style.top == "-5px") {
+                l3.style.top = 0;
+            }
+            else if (l4.style.top == "-5px") {
+                l4.style.top = 0;
+            }
+            else if (l5.style.top == "-5px") {
+                l5.style.top = 0;
+            }
+            else if (l6.style.top == "-5px") {
+                l6.style.top = 0;
+            }
+            localStorage.setItem("backgroundColor", "#AAAAAA");
+            text.style.backgroundColor = localStorage.getItem("backgroundColor");
+        }
+        else {
+            alert("您的浏览器不支持localStorage，请更新");
+        }
+        return localStorage.setItem("l1Top", l1.style.top);
+    }
+    l2.onclick = function () {
+        l2.style.top = -5 + "px";
+        if (localStorage) {
+            if (l1.style.top == "-5px") {
+                l1.style.top = 0;
+            }
+            else if (l3.style.top == "-5px") {
+                l3.style.top = 0;
+            }
+            else if (l4.style.top == "-5px") {
+                l4.style.top = 0;
+            }
+            else if (l5.style.top == "-5px") {
+                l5.style.top = 0;
+            }
+            else if (l6.style.top == "-5px") {
+                l6.style.top = 0;
+            }
+            localStorage.setItem("backgroundColor", "#8A2BE2");
+            text.style.backgroundColor = localStorage.getItem("backgroundColor");
+
+        }
+        else {
+            alert("您的浏览器不支持localStorage，请更新");
+        }
+    }
+    l3.onclick = function () {
+        l3.style.top = -5 + "px";
+        if (localStorage) {
+            if (l2.style.top == "-5px") {
+                l2.style.top = 0;
+            }
+            else if (l1.style.top == "-5px") {
+                l1.style.top = 0;
+            }
+            else if (l4.style.top == "-5px") {
+                l4.style.top = 0;
+            }
+            else if (l5.style.top == "-5px") {
+                l5.style.top = 0;
+            }
+            else if (l6.style.top == "-5px") {
+                l6.style.top = 0;
+            }
+            localStorage.setItem("backgroundColor", "#FFB6C1");
+            text.style.backgroundColor = localStorage.getItem("backgroundColor");
+        }
+        else {
+            alert("您的浏览器不支持localStorage，请更新");
+        }
+    }
+    l4.onclick = function () {
+        l4.style.top = -5 + "px";
+        if (localStorage) {
+            if (l2.style.top == "-5px") {
+                l2.style.top = 0;
+            }
+            else if (l3.style.top == "-5px") {
+                l3.style.top = 0;
+            }
+            else if (l1.style.top == "-5px") {
+                l1.style.top = 0;
+            }
+            else if (l5.style.top == "-5px") {
+                l5.style.top = 0;
+            }
+            else if (l6.style.top == "-5px") {
+                l6.style.top = 0;
+            }
+            localStorage.setItem("backgroundColor", "#00BFFF");
+            text.style.backgroundColor = localStorage.getItem("backgroundColor");
+        }
+        else {
+            alert("您的浏览器不支持localStorage，请更新");
+        }
+    }
+    l5.onclick = function () {
+        l5.style.top = -5 + "px";
+        if (localStorage) {
+            if (l2.style.top == "-5px") {
+                l2.style.top = 0;
+            }
+            else if (l3.style.top == "-5px") {
+                l3.style.top = 0;
+            }
+            else if (l4.style.top == "-5px") {
+                l4.style.top = 0;
+            }
+            else if (l1.style.top == "-5px") {
+                l1.style.top = 0;
+            }
+            else if (l6.style.top == "-5px") {
+                l6.style.top = 0;
+            }
+            localStorage.setItem("backgroundColor", "#FFFF00");
+            text.style.backgroundColor = localStorage.getItem("backgroundColor");
+        }
+        else {
+            alert("您的浏览器不支持localStorage，请更新");
+        }
+    }
+    l6.onclick = function () {
+        l6.style.top = -5 + "px";
+        if (localStorage) {
+            if (l2.style.top == "-5px") {
+                l2.style.top = 0;
+            }
+            else if (l3.style.top == "-5px") {
+                l3.style.top = 0;
+            }
+            else if (l4.style.top == "-5px") {
+                l4.style.top = 0;
+            }
+            else if (l5.style.top == "-5px") {
+                l5.style.top = 0;
+            }
+            else if (l1.style.top == "-5px") {
+                l1.style.top = 0;
+            }
+            localStorage.setItem("backgroundColor", "#00FA9A");
+            text.style.backgroundColor = localStorage.getItem("backgroundColor");
+        }
+        else {
+            alert("您的浏览器不支持localStorage，请更新");
+        }
+    }
+
+    window.onload = function () {
+        text.style.backgroundColor = localStorage.getItem("backgroundColor");
+        if (localStorage.getItem("backgroundColor") == "#AAAAAA") {
+            l1.style.top = -5 + "px";
+        }
+        else if (localStorage.getItem("backgroundColor") == "#8A2BE2") {
+            l2.style.top = -5 + "px";
+        }
+        else if (localStorage.getItem("backgroundColor") == "#FFB6C1") {
+            l3.style.top = -5 + "px";
+        }
+        else if (localStorage.getItem("backgroundColor") == "#00BFFF") {
+            l4.style.top = -5 + "px";
+        }
+        else if (localStorage.getItem("backgroundColor") == "#FFFF00") {
+            l5.style.top = -5 + "px";
+        }
+        else if (localStorage.getItem("backgroundColor") == "#00FA9A") {
+            l6.style.top = -5 + "px";
+        }
+    }
+    
+</script>
+
+</html>
