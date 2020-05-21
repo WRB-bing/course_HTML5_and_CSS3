@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>画布</title>
@@ -11,10 +12,11 @@
         left: 500px;
         top: 50px;
     }
+
     .span {
         position: relative;
-        left:560px;
-        top:40px;
+        left: 560px;
+        top: 40px;
         line-height: 150px;
         font-size: 50px;
         color: red;
@@ -22,15 +24,15 @@
 </style>
 
 <body>
-    <span id="text" class="span"></span> 
-    <canvas class="canvas" id="canvas" width="300px" height="150px"></canvas> 
+    <span id="text" class="span"></span>
+    <canvas class="canvas" id="canvas" width="300px" height="150px"></canvas>
 </body>
 <script>
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
     var text = document.getElementById("text");
     var arr = ["一等奖", "二等奖", "三等奖", "谢谢惠顾"];
-    var index = parseInt(Math.random()* 4);
+    var index = parseInt(Math.random() * 4);
     text.innerHTML = arr[index];
 
     context.beginPath();
@@ -38,42 +40,48 @@
     context.fillRect(0, 0, 300, 150);
     context.closePath();
 
+    var isMousedown;
     context.beginPath();
     context.globalCompositeOperation = "destination-out";
     canvas.onmousedown = function (e1) {
         //获取鼠标点击位置的圆心坐标
-        var isMousedown = true;
-        var e1 = e1||window.event;
-        var x1 = e1.clientX-canvas.offsetLeft;
-        var y1 = e1.clientY-canvas.offsetTop;
+        isMousedown = true;
+        var e1 = e1 || window.event;
+        var x1 = e1.clientX - canvas.offsetLeft;
+        var y1 = e1.clientY - canvas.offsetTop;
         context.moveTo(x1, y1);
-        context.arc(x1,y1,20,0,2*Math.PI,true);
+        context.arc(x1, y1, 20, 0, 2 * Math.PI, true);
         context.fill();
         canvas.onmousemove = function (e2) {
-            if (!isMousedown){
-                return true;
-            }   
-            var e2 = e2||window.event;
-            var x2 = e2.clientX-canvas.offsetLeft;
-            var y2 = e2.clientY-canvas.offsetTop;
-            context.moveTo(x2,y2);
-            context.arc(x2,y2,20,0,2*Math.PI,true);
-            context.fill();
-            var image = context.getImageData(0,0,300,150);
+            //判断鼠标移动时左键是否摁下
+            if (isMousedown) {
+                var e2 = e2 || window.event;
+                var x2 = e2.clientX - canvas.offsetLeft;
+                var y2 = e2.clientY - canvas.offsetTop;
+                context.beginPath();
+                context.moveTo(x2, y2);
+                context.arc(x2, y2, 20, 0, 2 * Math.PI, true);
+                context.fill();
+                context.closePath();
+            }
+            //判断是否已涂抹超过60%
+            var image = context.getImageData(0, 0, 300, 150);
             var count = 0;
-            for (var i = 0; i < image.data.length; i=i+4) {
-                var rgba = image.data[i+3];
+            for (var i = 0; i < image.data.length; i = i + 4) {
+                var rgba = image.data[i + 3];
                 if (rgba == 0) {
                     count++;
                 }
-                if (count >= image.data.length/4*0.6) {
-                    context.clearRect(0,0,300,150);
+                if (count >= image.data.length / 4 * 0.6) {
+                    context.clearRect(0, 0, 300, 150);
                 }
             }
         }
-        canvas.onmouseup = function(e){
+        canvas.onmouseup = function (e) {
             isMousedown = false;
         }
     }
+    context.closePath();
 </script>
+
 </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS3变形与动画</title>
+    <meta charset="utf-8">
+    <style>
+        ul li {
+            list-style: none;
+            background-color: aliceblue;
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+            margin-left: 30px;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 260px;
+        }
+
+        body {
+            background-image: url(images/bg3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .li1 {
+            width: 200px;
+            background-image: url(images/11.jpg);
+            background-repeat: no-repeat;
+            background-size: 90% 70%;
+            background-position:45% 20%;
+            transform:rotate(-5deg);
+        }
+
+        .li2 {
+            width: 130px;
+            background-image: url(images/22.jpg);
+            background-repeat: no-repeat;
+            background-size: 90% 70%;
+            background-position:45% 20%;
+        }
+
+        .li3 {
+            width: 200px;
+            background-image: url(images/33.jpg);
+            background-repeat: no-repeat;
+            background-size: 90% 70%;
+            background-position:45% 20%;
+            transform: rotate(-20deg);
+        }
+
+        .li4 {
+            background-image: url(images/44.jpg);
+            background-repeat: no-repeat;
+            background-size: 90% 70%;
+            background-position:45% 20%;
+        }
+        .li5 {
+            background-image: url(images/55.jpg);
+            background-repeat: no-repeat;
+            background-size: 90% 70%;
+            background-position:45% 20%;
+            transform: rotate(10deg);
+        }
+
+        .li6 {
+            width: 130px;
+            background-image: url(images/66.jpg);
+            background-repeat: no-repeat;
+            background-size: 90% 70%;
+            background-position:45% 20%;
+            transform: rotate(-13deg);
+        }
+
+        ul li:hover{
+            transform: scale(1.5,1.5);
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="li1">相识</li>
+        <li class="li2">凝视</li>
+        <li class="li3">甜睡</li>
+        <li class="li4">逗乐</li>
+        <li class="li5">奔跑</li>
+        <li class="li6">漠视</li>
+    </ul>
+
+</body>
+
+</html>
