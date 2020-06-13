@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>英华逸游</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul,
+        li,
+        ol {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background-image: url(images/back.png);
+            width: 100%;
+        }
+
+
+        @media screen and (min-width:800px) {
+
+            /* 头 */
+            .header {
+                height: 45px;
+                background-color: #282828;
+            }
+
+            .header p {
+                float: right;
+                margin-top: 11px;
+                color: #fff;
+                line-height: 25px;
+            }
+
+            .p1 {
+                margin-right: 15px;
+            }
+
+            .p2,
+            .p3,
+            .p5 {
+                margin-right: 10px;
+            }
+
+            .p4 {
+                margin-right: 20px;
+            }
+
+            /* 导航 */
+            .navbar {
+                height: 80px;
+                background-color: #e1e1e1;
+            }
+
+            .navbar a img {
+                margin-top: -5px;
+            }
+
+            .nav1 li {
+                margin-top: 15px;
+                margin-left: 80px;
+                line-height: 80px;
+            }
+
+            .nav1 li a {
+                color: #000;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            #col-1 ul li:hover {
+                border-bottom: 4px solid #e8420a;
+            }
+
+            #col-1 ul li a:hover {
+                color: #e8420a;
+            }
+
+            .dingzhi {
+                display: none;
+            }
+
+            /* 搜索栏 */
+            .banner {
+                background-image: url(images/banner.jpg);
+                height: 445px;
+                margin-top: -20px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .title {
+                float: left;
+                margin-left: 75px;
+                margin-top: 80px;
+                color: #fff;
+            }
+
+            .title_ {
+                font-size: 45px;
+                font-weight: lighter;
+            }
+
+            .description2 {
+                display: none;
+            }
+
+            .position {
+                height: 50px;
+                width: 145px;
+                background-image: url(images/position.png);
+                background-repeat: no-repeat;
+                background-position: 20px 10px;
+                float: left;
+                margin-left: -300px;
+                margin-top: 325px;
+                border: 4px solid rgba(24, 19, 20, 0.8);
+                border-right: none;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+
+            .form-control {
+                width: 310px;
+                height: 50px;
+                float: left;
+                margin-top: 325px;
+                margin-left: -155px;
+                border: 4px solid rgba(24, 19, 20, 0.8);
+                border-left: none;
+                border-right: none;
+            }
+
+            .search {
+                height: 50px;
+                width: 130px;
+                background-image: url(images/search.png);
+                background-repeat: no-repeat;
+                background-color: #cc5505;
+                background-position: center;
+                float: left;
+                margin-top: 325px;
+                border: 4px solid rgba(24, 19, 20, 0.8);
+                border-left: none;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+
+            /* 车辆接送 */
+            .car {
+                height: 390px;
+                margin-top: 30px;
+            }
+
+            .car_pc {
+                height: 360px;
+                width: 100%;
+                background-color: #1b396f;
+                border: 1px solid #1b396f;
+                border-radius: 5px;
+                background-image: url(images/Sbanner2.jpg);
+                background-position: left;
+                background-repeat: no-repeat;
+            }
+
+            .car_pc p {
+                color: #fff;
+                font-weight: lighter;
+                font-size: 16px;
+                float: left;
+                margin-left: 545px;
+            }
+
+            .car_pc img {
+                float: right;
+                margin-right: 50px;
+                margin-top: -80px;
+            }
+
+            .car_pc a {
+                width: 150px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 20px;
+                font-weight: lighter;
+                text-align: center;
+                color: #fff;
+                border: 1px solid #fff;
+                border-radius: 5px;
+                display: inline-block;
+                float: right;
+                margin-top: 70px;
+                margin-right: -660px;
+            }
+
+            .car_phone {
+                display: none;
+            }
+
+            /* 热门路线 */
+            .route {
+                height: 1080px;
+                margin-top: -50px;
+                overflow: hidden;
+            }
+            .left{
+                width:550px;
+            }
+            .left img{
+                width: 560px;
+            }
+            .presentation_left{
+                width:560px ;
+                height: 85px;
+                color: #fff;
+                background-color: #000000;
+                font-size: 16px;
+            }
+            .price{
+                font-size: 25px;
+            }
+            .right{
+                float: left;
+                margin-left: 20px;
+                width: 570px;
+            }
+            .right img{
+                width: 570px;
+            }
+            .presentation_right{
+                width: 570px;
+                height: 85px;
+                position: relative;
+                background-color: rgba(0, 0, 0, 0.5);
+                top: -85px;
+                color: #fff;
+                font-size: 16px;
+            }
+            .phone_title{
+                display: none;
+            }
+            .rp1{
+                padding-top: 15px;
+                padding-left: 30px;
+            }
+            .rp2{
+                padding-left: 30px;
+            }
+            .presentation_phone{
+                display: none;
+            }
+            .more{
+                display: none;
+            }
+            /* 使命与愿景 */
+            .vision{
+                height: 870px;
+                width: 100%;
+            }
+            .mission{
+                float: left;
+                margin-left: -90px;
+            }
+            .left_vision{
+                background-color: rgba(5, 68, 128, 0.7);
+                height: 350px;
+                width: 645px;
+                float: left;
+                margin-left: 35px;
+                color: #fff;
+                font-weight: lighter;
+            }
+            .left_vision h3{
+                text-align: center;
+            }
+            .left_vision p{
+                float: left;
+                margin-left: 70px;
+                margin-right: 70px;
+                line-height:30px;
+            }
+            .left_vision h5{
+                display: none;
+            }
+            .mission_pic img{
+                width: 1140px;
+                float: left;
+                margin-left:-15px ;
+            }
+
+
+            /* 各种图标 */
+            .pics{
+                height: 400px;
+                background-color: #1c5080;
+            }
+            .logos li{
+                background-image: url(images/rorate.png);
+                background-repeat: no-repeat;
+                height: 200px;
+                width: 200px;
+                display: inline-block;
+                float: left;
+                margin-top: 50px;
+                margin-left: 130px;
+                color: #fff;
+                font-size: 18px;
+                text-align: center;
+                /* border: 1px solid red; */
+            }
+            .logos li img{
+                margin-top: 60px;
+                margin-left: 65px;
+                display: block;
+            }
+            .logos li span{
+                display: block;
+                line-height: 40px;
+            }
+            .words li{
+                /* border: 1px solid red; */
+                height: 70px;
+                width: 270px;
+                float: left;
+                margin-top: 40px;
+                margin-left: 100px;
+                text-align: center;
+                color:#fff;
+                line-height: 30px;
+            }
+            .pics_phone{
+                display: none;
+            }
+
+            /* 底部 */
+            .pc_bottom {
+                height: 370px;
+                background-color: #000000;
+            }
+
+            .cooperation li {
+                color: #fff;
+                float: left;
+                height: 50px;
+                width: 120px;
+                margin-top: 30px;
+                margin-left: 20px;
+                text-align: center;
+            }
+
+            .cooperation li img {
+                vertical-align: center;
+            }
+
+            .cooperation li span {
+                display: block;
+                width: 100%;
+                text-align: center;
+                line-height: 30px;
+            }
+            .country_title{
+                float: left;
+                margin-left:-655px ;
+                margin-top: 105px;
+                color: #fff;
+                font-size: 18px;
+            }
+            .countries{
+                color: #fff;
+                float: left;
+                margin-left:150px ;
+                margin-top: -33px;
+                line-height: 25px;
+            }
+            .service_title{
+                float: left;
+                margin-left:47px ;
+                margin-top: 5px;
+                color: #fff;
+                font-size: 18px;
+            }
+            .services{
+                color: #fff;
+                float: left;
+                margin-left:30px ;
+                margin-top: 8px;
+                line-height: 25px;
+            }
+            .link_title{
+                float: left;
+                margin-left:-708px ;
+                margin-top: 45px;
+                color: #fff;
+                font-size: 18px;
+            }
+            .links{
+                color: #fff;
+                float: left;
+                margin-left:150px ;
+                margin-top: -35px;
+                line-height: 25px;
+            }
+
+            .copyright{
+            border-top: 1px solid #404040;
+            width: 1150px;
+            float: left;
+            margin-top: 20px;
+            }
+            .copyright p{
+            color: #fff;
+            float: left;
+            margin-top: 20px;
+            margin-left: 400px;
+            }
+            .phone_bottom{
+                display: none;
+            }
+        }
+
+
+        @media screen and (max-width:799px) {
+
+            /* 头 */
+            .header {
+                display: none;
+            }
+
+            /* 导航栏 */
+            .navbar {
+                height: 105px;
+            }
+
+            .navbar-toggle {
+                height: 70px;
+                width: 50px;
+                margin-top: 20px;
+            }
+
+            .navbar a img {
+                margin-top: 10px;
+            }
+
+            .dingzhi {
+                float: right;
+                margin-top: 28px;
+                margin-right: 30px;
+            }
+
+            .btn {
+                background-color: #e8410a;
+                color: #fff;
+                font-size: 18px;
+                height: 50px;
+                width: 100px;
+                float: right;
+                margin-right: -20px;
+            }
+
+            /* 搜索栏 */
+            .banner {
+                background-image: url(images/banner.jpg);
+                background-repeat: no-repeat;
+                height: 290px;
+                background-size: 100% 100%;
+                -moz-background-size: 100% 100%;
+                -webkit-background-size: 100% 100%;
+                -o-background-size: 100% 100%;
+            }
+
+            .title_ {
+                float: left;
+                color: #fff;
+                font-size: 25px;
+                margin-top: 50px;
+            }
+
+            .description1 {
+                display: none;
+            }
+
+            .description2 {
+                float: left;
+                margin-top: 100px;
+                margin-left: -295px;
+            }
+
+            .description2 span {
+                font-size: 18px;
+                color: #fff;
+
+            }
+
+            .position {
+                float: left;
+                margin-left: -295px;
+                margin-top: 190px;
+                height: 50px;
+                width: 100px;
+                background-image: url(images/position.png);
+                background-repeat: no-repeat;
+                background-position: 6px 8px;
+                border: 4px solid rgba(16, 23, 33, 0.8);
+                border-right: none;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+
+            .form-control {
+                float: left;
+                margin-left: -205px;
+                margin-top: 190px;
+                width: 220px;
+                height: 50px;
+                border: 4px solid rgba(16, 23, 33, 0.8);
+                border-right: none;
+                border-left: none;
+            }
+
+            .search {
+                float: left;
+                margin-left: -10px;
+                margin-top: 190px;
+                width: 90px;
+                height: 50px;
+                background-image: url(images/search.png);
+                background-repeat: no-repeat;
+                background-color: #cc5505;
+                background-position: center;
+                border: 4px solid rgba(16, 23, 33, 0.8);
+                border-left: none;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+
+            /* 车辆接送 */
+            .car_pc {
+                display: none;
+            }
+
+            .car_phone {
+                margin-top: 20px;
+                background-color: #ffffff;
+                height: 200px;
+            }
+
+            .car_phone img {
+                float: left;
+                margin-top: 45px
+            }
+
+            .car_phone p {
+                float: left;
+                margin-left: 10px;
+            }
+
+            .car_phone a {
+                width: 100px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                color: #8f8f8f;
+                border: 1px solid#b5b5b5;
+                border-radius: 5px;
+                display: inline-block;
+                float: right;
+                margin-top: -70px;
+            }
+
+            /* 热门路线 */
+            .route{
+                height: 730px;
+                background-color: #fff;
+            }
+            .route h1, .route h4{
+                display: none;
+            }
+            .phone_title{
+                float: left;
+                border-left: 2px solid #e8420a;
+                font-size: 20px;
+                font-weight: 530;
+                background-color: #fff;
+            }
+            .left{
+                width: 100%;
+                border-top: 1px solid #e8e8e8;
+                margin-top: 40px;
+            }
+            .left img{
+                margin-top: 20px;
+                width: 100%;
+                height: 100%;
+            }
+            .presentation_left{
+                display: none;
+            }
+            .presentation_phone{
+                position: relative;
+                background-color: rgba(0, 0, 0, 0.5);
+                height: 60px;
+                top: -60px;
+                color: #fff;
+                font-size: 15px;
+                line-height: 30px;
+            }
+
+            .price{
+                font-size: 25px;
+            }
+            .hot2{
+                float: left;
+                margin-top:-80px;
+            }
+            .rp1{
+                float: left;
+                margin-left: 10px;
+            }
+            .rp2{
+                float:right;
+                margin-top:15px;
+                margin-right: 10px;
+            }
+            .more{
+                width: 150px;
+                height: 40px;
+                border:1px solid #8f8f8f;
+                border-radius:5px;
+                color:#8f8f8f;
+                float: left;
+                margin-top: -40px;
+                margin-left: 130px;
+                line-height: 40px;
+                text-align: center;
+                font-size: 16px;
+            }
+            .right{
+                display: none;
+            }
+
+            /* 使命与愿景 */
+            .vision{
+                height: 630px;
+                margin-top: 20px;
+            }
+            .title p{
+                width: 100%;
+                height: 35px;
+                background-color: #fff;
+            }
+            .vision h1, .vision h4, .vision h3, .vision br{
+                display: none;
+            }
+            .mission img{
+                width: 100%;
+                margin-top: 10px;
+            }
+            .left_vision h5{
+                float: left;
+                font-size: 16px;
+                float: left;
+                margin-left: 140px;
+                margin-top: 30px;
+            }
+            .left_vision p{
+                float: left;
+                margin-top: 5px;
+            }
+            .mission_pic img{
+                width: 100%;
+            }
+
+            /* 图标们 */
+            .pics{
+                display: none;
+            }
+            .pics_phone{
+                height: 550px;
+                width: 100%;
+                background-color: #fff;
+            }
+            .pics_phone h5{
+                float: left;
+                font-size: 16px;
+                line-height: 40px;
+                float: left;
+                margin-left: 150px;
+                margin-top: 10px;
+            }
+            .pics_phone ul li{
+                width: 100%;
+                height:150px;
+                border-bottom: 1px solid #f8f8f8;
+                float: left;
+                background-repeat: no-repeat;
+                background-position: 15% 50%;
+            }
+            .li1{
+                background-image: url(images/icon11.png);
+            }
+            .li2{
+                background-image: url(images/icon22.png);
+            }
+            .li3{
+                background-image: url(images/icon33.png);
+            }
+            .logos_phone p{
+                float: left;
+                margin-left: 150px;
+                margin-top: 30px;
+            }
+
+            /* 底部 */
+            .pc_bottom{
+                display: none;
+            }
+            .phone_bottom{
+                width: 100%;
+                height: 170px;
+                background-color: #343235;
+                margin-top: -10px;
+            }
+            .phone_bottom div{
+                float: left;
+                margin-top: 50px;
+                margin-left: 75px;
+            }
+            .phone_bottom p{
+                color: #fff;
+                text-align: center;
+                /* margin-top: 30px; */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+           <!-- 头 --> 
+        <div class="header">
+            <p class="p1"><a href="#" style="color: white;">注册</a></p>
+            <p class="p2" style="color:white">|</p>
+            <p class="p3"><a href="#" style="color: white;">请登录</a></p>
+            <p class="p4"><a style="font-size: 16px; color:white;">400-808-8682</a></p>
+            <p class="p5"><img src="images/tell.png"></p>
+        </div>
+
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#col-1"
+                    style="border:none">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo"></a>
+                <div class="dingzhi">
+                    <button type="button" class="btn ">快速定制</button>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="col-1">
+                <ul class="nav navbar-nav nav1">
+                    <li><a href="#" >首页</a></li>
+                    <li><a href="#">热门路线</a></li>
+                    <li><a href="#" >签证推荐</a></li>
+                    <li><a href="#">使命愿景</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- 搜索栏 -->
+        <div class="banner">
+            <div class="title">
+                <span class="title_" style="font-weight: lighter;">悠游古欧洲&nbsp&nbsp&nbsp遍览德法瑞意</span>
+                <div class="description1">
+                    <hr style="border-color: #676769;">
+                    <span style="font-size: 20px;line-height: 45px;font-weight: lighter;">巴黎卢浮宫、塞纳河游船、凡尔赛宫</span>
+                    <br />
+                    <span style="font-size:20px;line-height: 45px;font-weight: lighter;">少女峰、大运河游船、金色列车、西庸城堡</span>
+                    <hr style="border-color: #676769;">
+                </div>
+                <div class="description2">
+                    <span style="font-weight: lighter;">全程升级热早+1晚5星酒店</span>
+                    <br>
+                    <hr style="border-color: #676769; ">
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="position" type="button" id="search0" value="目的地">
+                <input class="form-control" type="search" id="search1" placeholder=" | 日本 美国 英国 地中海">
+                <input class="search" type="button" id="search2">
+            </div>
+        </div>
+        <!-- 车辆接送 -->
+        <div class="car">
+            <div class="car_pc">
+                <p style="font-size: 40px;font-weight: lighter;margin-top: 35px;">机场接送 省钱省心</p>
+                <p style="line-height: 30px;">提供上海、苏州、无锡各市</p>
+                <p style="line-height: 0px;">往返机场、码头接送服务，更有包车服务</p>
+                <img src="images/car.png">
+                <p style="font-size:20px;float: right;line-height:50px;margin-right: -90px;">车辆接送</p>
+                <a href="#">查看详情</a>
+            </div>
+            <div class="car_phone">
+                <img src="images/carH.png">
+                <p style="color: #1c5080;font-size: 20px;margin-top: 45px;">机场接送 省心省力</>
+                <p style="color: #666666;line-height: 20px;">提供上海、苏州、无锡各市</p>
+                <p style="color: #666666;line-height: 20px;">往返机场、码头接送服务，更有包车服务</p>
+                <a href="#">查看详情</a>
+            </div>
+        </div>
+        <!-- 热门路线 -->
+        <div class="route">
+            <h1 style="text-align: center;padding-top:30px ;">热 门 线 路</h1>
+            <h4 style="text-align: center;">Popular tourist routes</h4>
+            <p class="phone_title">&nbsp&nbsp热门路线</p>
+            <div class="row" >
+                <!-- 左侧 -->
+                <div class="col-md-6 left">
+                    <div class="hot1">
+                        <img src="images/hot1.jpg">
+                        <div class="presentation_left">
+                            <p class="rp1">海南三亚5天4晚，纯玩、4晚红树林度假王国</p>
+                            <p class="rp2">￥<span class="price">2580</span>/人起</p>
+                        </div>
+                        <div class="presentation_phone">
+                            <p class="p1">海南三亚5天4晚<br>纯玩、4晚红树林度假王国</p>
+                            <p class="p2">￥<span class="price">2580</span>/人起</p>
+                        </div>
+                    </div>
+                    <div class="hot2">
+                        <img src="images/hot2.jpg">
+                        <div class="presentation_left">
+                            <p class="p1">德法瑞意欧洲四国，ABCD任意路线任您挑选</p>
+                            <p class="p2">￥<span class="price">7999</span>/人起</p>
+                        </div>
+                        <div class="presentation_phone">
+                            <p class="rp1">德法瑞意欧洲四国<br>ABCD任意路线任您挑选</p>
+                            <p class="rp2">￥<span class="price">7999</span>/人起</p>
+                        </div>
+                    </div>
+                    <a class="more" id="more" href="#">查看更多 ></a>
+                </div>
+                <!-- 右侧 -->
+                <div class="col-md-6 right">
+                    <div class="hot3">
+                        <img src="images/hot3.jpg">
+                        <div class="presentation_right">
+                            <p class="p1">曼谷+芭提雅 国际五星，赠送2220大礼包，绝无自费</p>
+                            <p class="p2">￥<span class="price">2799</span>/人起</p>
+                        </div>
+                    </div>
+                    <div class="hot4">
+                        <img src="images/hot4.jpg" style="margin-top: -85px;">
+                        <div class="presentation_right">
+                            <p class="p1">日本本洲游 樱花、寿司、温泉、美食</p>
+                            <p class="p2">￥<span class="price">5399</span>/人起</p>
+                        </div>
+                    </div>
+                    <div class="hot5">
+                        <img src="images/hot5.jpg" style="margin-top: -85px;">
+                        <div class="presentation_right">
+                            <p class="p1">斯里兰卡7天6晚全景游 保证入睡2晚香格里拉</p>
+                            <p class="p2">￥<span class="price">7999</span>/人起</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 使命与愿景 -->
+        <div class="vision">
+            <h1 style="text-align: center;">使 命 与 愿 景</h1>   
+            <h4 style="text-align: center;">让旅游回归本质，体验纯粹旅游</h4> 
+            <div class="title">
+                <p class="phone_title">&nbsp&nbsp使命与愿景：
+                    <span style="font-size: 16px;">让旅游回归本质，体验纯粹旅游</span>
+                </p>
+            </div>               
+            <div class="col-md-5 mission">
+                <img src="images/mission1.jpg">
+            </div>
+            <div class="col-md-7 left_vision">
+                <br><br><br>
+                <h3>服务理念及优势</h3>
+                <h5>--服务理念--</h5>
+                <br>
+                <p> “英华逸游”通过重新打造旅游全过程中的产品设计、出行交通方案、陪游向导服务、增值关怀项目等，
+                    为客户提供高质量的旅游体验。英华逸游在泰国、欧洲、等多个国家拥有丰富的旅游资源，
+                    同时致力于给用户提供性价比高的产品和服务</p>
+            </div>
+            <div class="col-md-12 mission_pic">
+                <img src="images/mission2.jpg">
+            </div>
+        </div>
+        <!-- 图标 -->
+        <div class="pics">
+            <ul class="logos">
+                <li>
+                    <img src="images/icon1.png">
+                    <span>品质行程</span>
+                </li>
+                <li>
+                    <img src="images/icon2.png" style="margin-left: 70px;margin-top: 50px;">
+                    <span>品质消费</span>
+                </li>
+                <li>
+                    <img src="images/icon3.png" style="margin-left:72px;margin-top: 50px;">
+                    <span>品质小团</span>
+                </li>
+            </ul>
+            <ul class="words">
+                <li>旅游达人精心设计、基于口碑反复打磨，<br>
+                    全网最好，敢跟任何产品比</li>
+                <li style="margin-left: 50px;">不推自费，<br>
+                    不进垃圾购物店和伪景点</li>
+                <li style="margin-left: 60px;">独立成团不散拼，<br>
+                    只跟亲朋好友一起玩，每天发团</li>
+            </ul>
+        </div>
+        <div class="pics_phone">
+            <h5>--服务优势--</h5>
+            <ul class="logos_phone">
+                <li class="li1">
+                <p>旅游达人精心设计、基于口碑反复打磨，<br>
+                告别人山人海鸡肋景点。<br>
+                全网最好，敢跟任何产品比</p>
+                </li>
+                <li class="li2">
+                    <p style="margin-top: 60px;">不推自费，<br>
+                    不进垃圾购物店和伪景点</p>
+                </li>
+                <li class="li3">
+                    <p style="margin-top: 60px;">独立成团不敢拼，<br>
+                    只跟亲朋好友一起玩，每天发团</p>
+                </li>
+            </ul>
+
+        </div>
+
+
+
+
+
+
+        <!-- 底部 -->
+        <div class="pc_bottom">
+            <div class="company">
+                <ul class="nav navbar-nav cooperation">
+                    <li style="font-size: 18px;">合作伙伴</li>
+                    <li><img src="images/xiecheng.png"><span>携程网</span></li>
+                    <li><img src="images/feizhu.png"><span>阿里飞猪</span></li>
+                    <li><img src="images/quna.png"><span>去哪儿</span></li>
+                    <li><img src="images/suzhou.png"><span>苏州旅游局</span></li>
+                </ul>
+            </div>
+            <div class="country">
+                <p class="country_title">热门位置</p>
+                <p class="countries">
+                  韩国&nbsp&nbsp&nbsp日本&nbsp&nbsp&nbsp菲律宾&nbsp&nbsp&nbsp越南&nbsp&nbsp&nbsp
+                  老挝&nbsp&nbsp&nbsp柬埔寨&nbsp&nbsp&nbsp
+                  泰国&nbsp&nbsp&nbsp马来西亚&nbsp&nbsp&nbsp
+                  新加坡&nbsp&nbsp&nbsp印度尼西亚
+                  &nbsp&nbsp&nbsp印度&nbsp&nbsp&nbsp斯里兰卡&nbsp&nbsp&nbsp土耳其&nbsp&nbsp&nbsp
+                  阿联酋&nbsp&nbsp&nbsp西班牙&nbsp&nbsp&nbsp意大利&nbsp&nbsp&nbsp
+                  希腊&nbsp&nbsp&nbsp法国&nbsp&nbsp&nbsp比利时&nbsp&nbsp&nbsp
+                  荷兰&nbsp&nbsp&nbsp英国&nbsp&nbsp&nbsp
+                  瑞士&nbsp&nbsp&nbsp奥地利
+                  &nbsp&nbsp&nbsp德国&nbsp&nbsp&nbsp匈牙利&nbsp&nbsp&nbsp俄罗斯&nbsp&nbsp&nbsp
+                  捷克&nbsp&nbsp&nbsp芬兰&nbsp&nbsp&nbsp葡萄牙&nbsp&nbsp&nbsp冰岛&nbsp&nbsp&nbsp
+                  美国&nbsp&nbsp&nbsp加拿大&nbsp&nbsp&nbsp巴西&nbsp&nbsp&nbsp阿根廷
+                  &nbsp&nbsp&nbsp澳大利亚&nbsp&nbsp&nbsp新西兰
+                </p>
+            </div>
+            <div class="service">
+                <p class="service_title">主题服务</p>
+                <p class="services">
+                  海岛度假&nbsp&nbsp&nbsp历史文化&nbsp&nbsp&nbsp探索冒险&nbsp&nbsp&nbsp
+                  美食购物&nbsp&nbsp&nbsp都市生活&nbsp&nbsp&nbsp海外游学&nbsp&nbsp&nbsp邮轮度假&nbsp&nbsp&nbsp
+                  蜜月摄影&nbsp&nbsp&nbsp亲子乐园
+                </p>
+            </div>
+            <div class="link">
+                <p class="link_title">友情链接</p>
+                <p class="links">
+                  马蜂窝&nbsp&nbsp&nbsp穷游&nbsp&nbsp&nbspbooking&nbsp&nbsp&nbsp苏州旅游局&nbsp&nbsp&nbsp
+                  驴友网&nbsp&nbsp&nbsp吾爱全球签证中心&nbsp&nbsp&nbsp酒店团购&nbsp&nbsp&nbsp携程旅游攻略&nbsp&nbsp&nbsp
+                  天巡职航在线&nbsp&nbsp&nbsp满天飞旅游网&nbsp&nbsp&nbsp中国旅游网&nbsp&nbsp&nbsp澳乐网&nbsp&nbsp&nbsp
+                  背包兔旅游行程&nbsp&nbsp&nbsp出境旅游&nbsp&nbsp&nbsp国际酒店&nbsp&nbsp&nbsp广州旅行社&nbsp&nbsp&nbsp
+                  出境旅游&nbsp&nbsp&nbsp517旅行&nbsp&nbsp&nbsp花生游&nbsp&nbsp&nbsp家园网&nbsp&nbsp&nbsp海外婚礼
+                </p>
+            </div>
+            <div class="copyright">
+                <p>2020  @苏州英华国际旅游有限公司 版权所有</p>
+            </div>
+        </div>
+        <div class="phone_bottom">
+            <div>
+            <p>苏ICP备号、2020</p>
+            <p>@苏州英华国际旅游有限公司&nbsp&nbsp版权所有</p>
+            <p>技术支持&nbsp&nbsp杭州科技</p>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
